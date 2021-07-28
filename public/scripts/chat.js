@@ -12,8 +12,10 @@ socket.on('message', gotMessageFromServer)
 
 function gotMessageFromServer (msg){
     var template = document.getElementById('incoming_msg').innerHTML;
-    var rendered = Mustache.render(template, { message: msg, date: new Date().toLocaleTimeString()});
+    var id =new Date().getTime()
+    var rendered = Mustache.render(template, { message: msg, date: new Date().toLocaleTimeString(), id:id});
     document.getElementById('messagesBox').innerHTML += rendered;
+    document.getElementById(id).scrollIntoView();
 }
 
 function sendButtonPushed(){
@@ -29,8 +31,10 @@ function sendMesToServer(mes){
     socket.emit('chat message', mes)
     clearInput();
     var template = document.getElementById('outgoing_msg').innerHTML;
-    var rendered = Mustache.render(template, { message: mes, date: new Date().toLocaleTimeString()});
+    var id =new Date().getTime()
+    var rendered = Mustache.render(template, { message: mes, date: new Date().toLocaleTimeString(), id:id});
     document.getElementById('messagesBox').innerHTML += rendered;
+    document.getElementById(id).scrollIntoView();
 }
 
 

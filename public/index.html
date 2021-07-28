@@ -123,7 +123,7 @@
     </div></div>
     </body>
     <script id="outgoing_msg" type="x-tmpl-mustache">
-        <div class="outgoing_msg">
+        <div id="{{id}}" class="outgoing_msg">
             <div class="sent_msg">
               <p>{{message}}</p>
               <span class="time_date">{{date}}</span> </div>
@@ -131,7 +131,7 @@
       </script>
 
       <script id="incoming_msg" type="x-tmpl-mustache">
-        <div class="incoming_msg">
+        <div id="{{id}}" class="incoming_msg">
             <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
             <div class="received_msg">
               <div class="received_withd_msg">
