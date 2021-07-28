@@ -12,7 +12,7 @@ const path = require("path");
 const publicDirectoryPath = path.join(__dirname, "./public");
 app.use(express.static(publicDirectoryPath));
 
-app.get("", (req, res) => {
+app.get("/", (req, res) => {
     res.render("index");
     });
 
